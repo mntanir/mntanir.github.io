@@ -1,0 +1,21 @@
+.scene { position: relative; }
+.scene > .scene-stage { position: relative; }
+
+html.js .scene.is-live { height: calc((var(--hold, 2) + 1) * 100svh); }
+html.js .scene.is-live > .scene-stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: clip;
+  contain: layout paint;
+}
+
+.scene.is-live [data-move] { will-change: transform, opacity; }
+
+html.is-smooth { scroll-behavior: auto; }
+html.is-smooth body { overscroll-behavior: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .scene.is-live { height: auto; }
+  html.js .scene.is-live > .scene-stage { position: relative; height: auto; }
+}

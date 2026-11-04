@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mntanir.github.io/sitemap.xml
